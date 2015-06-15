@@ -1,0 +1,51 @@
+\input{newcommands}
+\input{preamble}
+\usepackage{bibentry}
+
+\setbeamerfont{page number in head/foot}{size=\Large}
+\setbeamerfont{framesubtitle}{size=\large}
+\setbeamertemplate{footline}[frame number]
+\beamertemplatenavigationsymbolsempty
+
+\begin{document}
+%%% Length adjustments for blocks - looks better
+\addtobeamertemplate{block begin}{\setlength\abovedisplayskip{-5pt}\setlength\belowdisplayskip{-00pt}}
+
+%%% Add small toc-overview before each section (comment out if wanted)
+% \AtBeginSection[] {
+%     \begin{frame}[noframenumbering]{Table of Contents}
+%     \tableofcontents[currentsection]
+%   \end{frame}
+% }
+
+%%% Meta data
+\title{TITLE}
+\author{NAME}
+\date{DATE}
+
+%%% Titlepage
+\begin{frame}
+    \maketitle
+\end{frame}
+
+%%% Table of contents slide
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+%%% Sample frame
+\section{SAMPLE FRAME}
+\begin{frame}{FRAME TITLE}
+    \begin{columns}
+        \column{.5\textwidth}
+        \begin{block}{SAMPLE BLOCK TITLE}
+            TEXT TEXT
+        \end{block}
+        \column{.5\textwidth}
+        \begin{block}{SAMPLE BLOCK TITLE}
+            TEXT TEXT
+        \end{block}
+    \end{columns}
+\end{frame}
+
+\end{document}
