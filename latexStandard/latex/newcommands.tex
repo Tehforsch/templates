@@ -49,24 +49,6 @@
 }
 \newcommand{\fref}[1]{Abb.~\ref{fig:#1}}
 \newcommand{\figref}[1]{Abbildung~\ref{fig:#1}}
-% \plot{file name}{caption}
-\newcommand{\plot}[htbp!]{
-    \begin{figure}[#3]
-        \centering
-        \subimport{\figureDirectory}{#1}
-        \caption{#2}
-        \label{fig:#1}
-    \end{figure}
-}
-% \plotopt{file name}{caption}{positioning}
-\newcommand{\plotopt}[3]{
-    \begin{figure}[#3]
-        \centering
-        \subimport{\figureDirectory}{#1}
-        \caption{#2}
-        \label{fig:#1}
-    \end{figure}
-}
 
 %%% Units
 \newcommand{\seconds}[1]{\ensuremath{\unit[#1]{s}}}
