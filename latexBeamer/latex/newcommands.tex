@@ -1,1 +1,68 @@
-../../latexStandard/latex/newcommands.tex
+%%% Brackets etc.
+\newcommand{\bb}[1]{\left(#1\right)}                                        % (..)
+\newcommand{\bc}[1]{\left[#1\right]}                                        % [..]
+\newcommand{\bd}[1]{\left\langle#1\right\rangle}                            % <..>
+\newcommand{\abs}[1]{\left|#1\right|}                                       % |..|
+\newcommand{\abssq}[1]{\abs{#1}^2}                                          % |..|^2
+\newcommand{\comm}[2]{\left[#1, #2\right]}                                  % [.., ..]
+\newcommand{\anticomm}[2]{\left\{#1, #2\right\}}                            % {.., ..}
+\newcommand{\bra}[1]{\ensuremath{\left\langle#1\right|}\xspace}             % <...|
+\newcommand{\ket}[1]{\ensuremath{\left|#1\right\rangle}\xspace}             % |...>
+\newcommand{\braket}[2]{\left\langle#1\middle|#2\right\rangle}              % <...|...>
+\newcommand{\ketbra}[2]{\left|#1\middle\rangle\middle\langle#2\right|}      % |...><...|
+\newcommand{\braketop}[3]{\left\langle#1\middle|#2\middle|#3\right\rangle}  % <...|...|...>
+
+%%% Integrals, Differentials
+\newcommand{\diff}[1]{\ensuremath{\frac{\mathrm{d}}{\mathrm{d}#1}}}         % d/dx
+\newcommand{\sdiff}[1]{\ensuremath{\frac{\mathrm{d}^2}{\mathrm{d}#1^2}}}    % d^2/dx^2
+\newcommand{\dd}[2]{\ensuremath{\frac{\mathrm{d}#1}{\mathrm{d}#2}}}         % df/dx
+\newcommand{\sdd}[2]{\ensuremath{\frac{\mathrm{d}^2#1}{\mathrm{d}#2^2}}}    % d^2f/dx^2
+\newcommand{\pdiff}[1]{\ensuremath{\frac{\partial}{\partial#1}}}            % partial d/dx
+\newcommand{\spdiff}[1]{\ensuremath{\frac{\partial^2}{\partial#1^2}}}       % partial d^2/dx^2
+\newcommand{\pp}[2]{\ensuremath{\frac{\partial#1}{\partial#2}}}             % partial df/dx
+\newcommand{\spp}[2]{\ensuremath{\frac{\partial^2#1}{\partial#2^2}}}        % partial d^2f/dx^2
+
+\newcommand{\integral}[4]{\int_{#1}^{#2} #4 \mathrm{d}#3}                   % Integral with non-italic differential
+\newcommand{\infintegral}[2]{\int_{-\infty}^{\infty} #2 \mathrm{d}#1}       % Integral over entire R
+
+%%% Constants
+\newcommand{\kB}[0]{k_{\mathrm{B}}}                                         % Boltzmann factor
+
+%%% Figures (stolen)
+\newcommand{\figureDirectory}{../pics/}
+% \igopt[options]{file name}
+\newcommand{\igopt}[2]{\includegraphics[#1]{\figureDirectory#2}}
+% \ig[width in units of \textwidth]{file name}
+\newcommand{\ig}[2]{\igopt{width=#1\columnwidth}{#2}}
+% \figopt[width]{file name}{caption}{placement: h, t, ht, ..}
+\newcommand{\figopt}[4]{
+    \begin{figure}[#4]
+        \centering
+        \ig{#1}{#2}
+        \caption{#3}
+        \label{fig:#2}
+    \end{figure}
+}
+% \fig{width}{file name}{caption}
+\newcommand{\fig}[3]{
+    \figopt{#1}{#2}{#3}{htbp!}
+}
+\newcommand{\fref}[1]{Abb.~\ref{fig:#1}}
+\newcommand{\figref}[1]{Abbildung~\ref{fig:#1}}
+
+%%% Units
+\newcommand{\seconds}[1]{\ensuremath{\unit[#1]{s}}}
+\newcommand{\mseconds}[1]{\ensuremath{\unit[#1]{ms}}}
+\newcommand{\kgram}[1]{\ensuremath{\unit[#1]{kg}}}
+\newcommand{\gram}[1]{\ensuremath{\unit[#1]{g}}}
+\newcommand{\meter}[1]{\ensuremath{\unit[#1]{m}}}
+\newcommand{\mmeter}[1]{\ensuremath{\unit[#1]{mm}}}
+\newcommand{\mumeter}[1]{\ensuremath{\unit[#1]{\mu m}}}
+\newcommand{\nanometer}[1]{\ensuremath{\unit[#1]{nm}}}
+\newcommand{\volt}[1]{\ensuremath{\unit[#1]{V}}}
+\newcommand{\mvolt}[1]{\ensuremath{\unit[#1]{mV}}}
+\newcommand{\kelvin}[1]{\ensuremath{\unit[#1]{K}}}
+\newcommand{\mkelvin}[1]{\ensuremath{\unit[#1]{mK}}}
+\newcommand{\watt}[1]{\ensuremath{\unit[#1]{W}}}
+\newcommand{\mwatt}[1]{\ensuremath{\unit[#1]{mW}}}
+\newcommand{\invcm}[0]{\ensuremath{\mathrm{cm}^{-1}}}
